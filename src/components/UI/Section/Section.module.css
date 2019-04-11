@@ -1,0 +1,8 @@
+.Section {
+  width: 80%;
+  margin: 20px auto;
+  padding: 16px;
+  box-shadow: 0 2px 3px #cccccc;
+  background-color: #f5f6fcf5;
+  text-align: center;
+}

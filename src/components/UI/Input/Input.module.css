@@ -1,0 +1,9 @@
+.Input {
+  width: 40%;
+}
+
+@media (max-width: 699px) {
+  .Input {
+    width: 80%;
+  }
+}

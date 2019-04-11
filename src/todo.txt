@@ -1,0 +1,12 @@
+- Auth with firebase
+- login/signup forms
+
+UI:
+- spinner
+- card
+- input
+
+
+Tests:
+- test Sidebar
+- test Toolbat for resize an
