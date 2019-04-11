@@ -1,0 +1,30 @@
+.grow {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1
+}
+
+.margin {
+  margin: 0px 18px;
+}
+
+.menuButton {
+  margin-left: -12;
+  margin-right: 20;
+}
+
+@media (min-width: 700px) {
+  .menuButton {
+    display: none;
+  }
+}
+
+.navItems {
+  display: inherit;
+}
+
+@media (max-width: 699px) {
+  .navItems {
+    display: none;
+  }
+}
