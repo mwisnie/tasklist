@@ -16,7 +16,7 @@ const mainNavItems = [
   },
 ];
 
-const authNavItems = [
+const unauthenticatedNavItems = [
  {
    text: 'Login',
    path: '/login',
@@ -29,9 +29,23 @@ const authNavItems = [
  }
 ];
 
+const authenticatedNavItems = [
+  {
+    text: 'Account',
+    path: '/account',
+    exact: true
+  },
+  {
+    text: 'Logout',
+    path: '/logout',
+    exact: true
+  }
+ ];
+
 const navItems = {
   mainNavItems: mainNavItems,
-  authNavItems: authNavItems
+  unauthenticatedNavItems: unauthenticatedNavItems,
+  authenticatedNavItems: authenticatedNavItems
 };
 
 export default navItems;

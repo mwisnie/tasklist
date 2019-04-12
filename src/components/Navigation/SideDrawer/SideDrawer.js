@@ -6,10 +6,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import React from 'react';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import * as actionCreators from './../../../store/UI/actions';
 import classes from './SideDrawer.module.css';
 
 const sideDrawer = props => {
@@ -59,7 +57,7 @@ const sideDrawer = props => {
   );
 
   return (
-    <Drawer open={props.sideDrawerOpen} onClose={props.sideDrawerToggle}>
+    <Drawer open={props.isOpen} onClose={props.sideDrawerToggle}>
       <div
         tabIndex={0}
         role="button"
@@ -72,18 +70,4 @@ const sideDrawer = props => {
 
 };
 
-const mapStateToProps = state => {
-  return {
-    sideDrawerOpen: state.ui.sideDrawerOpen
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    sideDrawerToggle: () => dispatch(actionCreators.sideDrawerToggle())
-  };
-};
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(sideDrawer));
+export default withRouter(sideDrawer);

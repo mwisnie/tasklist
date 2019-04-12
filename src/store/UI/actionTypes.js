@@ -1,0 +1,4 @@
+export const SIDE_DRAWER_TOGGLE = 'SIDE_DRAWER_TOGGLE';
+
+export const START_LOADING = 'START_LOADING';
+export const STOP_LOADING = 'STOP_LOADING';

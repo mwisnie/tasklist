@@ -1,22 +1,25 @@
 import reducer from './reducer';
 
-import * as actions from './actions';
+import * as actions from './actionTypes';
 
 describe('ui reducer', () => {
   it('should return initial state', () => {
     expect(reducer(undefined, {}))
           .toEqual({
-            sideDrawerOpen: false
+            sideDrawerOpen: false,
+            loading: false
           });
   });
   
   it('should open side drawer correctly', () => {
     expect(reducer({
-      sideDrawerOpen: false
+      sideDrawerOpen: false,
+      loading: false
     }, {
       type: actions.SIDE_DRAWER_TOGGLE
     })).toEqual({
-      sideDrawerOpen: true
+      sideDrawerOpen: true,
+      loading: true
     });
   });
 

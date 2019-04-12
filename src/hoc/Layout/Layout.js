@@ -2,20 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import AppToolbar from './../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from './../../components/Navigation/SideDrawer/SideDrawer';
-import * as actionCreators from './../../store/UI/actions';
+import * as actionCreators from './../../store/UI/actionCreators';
 import navItems from './../../components/Navigation/navigation-items';
+import Spinner from './../../components/UI/Spinner/Spinner';
 
 const layout = props => {
-  const sideDrawerToggle = () => {
-    props.sideDrawerToggle();
+  const condNavItems = {
+    mainNavItems: navItems.mainNavItems,
+    authNavItems: props.isAuthenticated ? navItems.authenticatedNavItems : navItems.unauthenticatedNavItems
   };
 
   return (
     <React.Fragment>
-      <AppToolbar sideDrawerToggle={sideDrawerToggle} navItems={navItems} />
-      <SideDrawer navItems={navItems} />
+      <AppToolbar sideDrawerToggle={props.sideDrawerToggle} navItems={condNavItems} />
+      <SideDrawer 
+        sideDrawerToggle={props.sideDrawerToggle} 
+        isOpen={props.sideDrawerOpen}
+        navItems={condNavItems} />
       <main>
-        {props.children}
+        {props.isLoading ? <Spinner /> : props.children}
       </main>
     </React.Fragment>
   );
@@ -23,7 +28,9 @@ const layout = props => {
 
 const mapStateToProps = state => {
   return {
-    sideDrawerOpen: state.sideDrawerOpen
+    sideDrawerOpen: state.ui.sideDrawerOpen,
+    isLoading: state.ui.isLoading,
+    isAuthenticated: state.auth.token
   };
 };
 

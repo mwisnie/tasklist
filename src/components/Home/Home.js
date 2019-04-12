@@ -1,15 +1,11 @@
 import React from 'react';
-import Section from './../UI/Section/Section';
 
-import Input from './../UI/Input/Input';
+import Section from './../UI/Section/Section';
 
 const home = props => {
   return (
     <Section>
-      <Input label="mylabel" type="email" name="email" />
-      <br />
-      <Input label="mylabel" type="password" name="email" />
-      <p>home</p>
+      <p>home placeholder</p>
     </Section>
   );
 };

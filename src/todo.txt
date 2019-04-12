@@ -1,12 +1,6 @@
-- Auth with firebase
-- login/signup forms
+TODO:
+- tests
+- tasks, add tasks
 
-UI:
-- spinner
-- card
-- input
-
-
-Tests:
-- test Sidebar
-- test Toolbat for resize an
+- fix redirect after auth
+- automatic login at start
